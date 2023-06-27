@@ -31,8 +31,8 @@ class PlatesRepository {
     return knex('plates').where('title', 'like', `%${title}%`).orderBy('title');
   }
 
-  async findPlatesByTitleAndIngredients(title, ingredients) {
-    return knex('ingredients')
+  async findPlatesByTitleAndIngredients(title, ingredientName) {
+    return knex('plates')
       .select([
         'plates.id',
         'plates.title',
@@ -41,9 +41,16 @@ class PlatesRepository {
         'plates.price',
         'plates.image'
       ])
-      .where('plates.title', 'like', `%${title}%`)
-      .whereIn('name', ingredients)
-      .innerJoin('plates', 'plates.id', 'ingredients.plate_id')
+      .leftJoin('ingredients', 'plates.id', 'ingredients.plate_id')
+      .where(function () {
+        this.where('plates.title', 'like', `%${title}%`).orWhere(function () {
+          this.where(
+            'ingredients.name',
+            'like',
+            `%${ingredientName}%`
+          ).andWhereNotNull('plates.id');
+        });
+      })
       .groupBy('plates.id')
       .orderBy('plates.title');
   }
