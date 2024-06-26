@@ -1,20 +1,18 @@
 
 # Food Explorer
 
-O Food Explorer é um cardápio digital de restaurante. O administrador pode criar, editar ou excluir novos pratos, o usuário pode visualizar detalhes dos pratos e os adicionar a um carrinho. 
+The Food Explorer is a digital restaurant menu. The administrator can create, edit, or delete new dishes, and the user can view dish details and add them to a cart.
 
-## Acesse
+## Access here
 
-- App
-  https://myfoodexplorer.vercel.app/
-
-- Deploy backend
-  https://foodexplorer-api-9wdp.onrender.com
+- [Explore the site](https://myfoodexplorer.vercel.app)
+- [Backend deploy](https://foodexplorer-api-9wdp.onrender.com)
+  
 
 ![App Screenshot](https://i.imgur.com/GWE175c.png)
 
 
-#### 🔑 Utilize a conta abaixo para ver a aplicação do ponto de vista do admin
+#### 🔑 Use the account below to view the application from the admin's perspective.
 
 ```bash
   e-mail: admin@foodexplorer.com
@@ -22,7 +20,7 @@ O Food Explorer é um cardápio digital de restaurante. O administrador pode cri
 ```
 
 
-## 🚀 Tecnologias:
+## 🚀 Technologies
 
 - NodeJS
 - JavaScript
@@ -33,35 +31,36 @@ O Food Explorer é um cardápio digital de restaurante. O administrador pode cri
 ## Endpoints
 
 ```bash
-/plates #get => lista todos os pratos | post => cria pratos
-/plates/:id #get => busca um prato pelo id
-/plates/:id #delete => deleta um prato
-/plates/:id #put => atualiza um prato
-/session #post => cria uma sessão
-/users  #post => cria um usuário
+/plates #get => lists all mels | post => create a meal
+/plates/:id #get => retrieves a meal by id
+/plates/:id #delete => deletes a meal
+/plates/:id #put => updates a meal
+/session #post => creates a session
+/users  #post => creates a user
 ```
 
-## Documentação de funcionamento
+## Run project
 
-Clone o projeto
+Clone the project
 
 ```bash
   git clone https://github.com/helomafra/foodExplorer-api.git
 ```
 
-Crie um arquivo .env com os dados:
+
+Create a .env file with
 
 ```bash
 AUTH_SECRET
 ```
 
-Instale as dependências
+Install the dependencies
 
 ```bash
   npm install
 ```
 
-Inicie o servidor
+Start the server
 
 ```bash
   npm start
